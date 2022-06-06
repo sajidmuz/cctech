@@ -34,39 +34,39 @@ nums2.length == n
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1 = nums1.length;
-		int len2 = nums2.length;
-		int[] newArr = new int[len1+len2];
-		double res = 0;
-		int i = 0,j = 0,k=0;
+	int len2 = nums2.length;
+	int[] newArr = new int[len1+len2];
+	double res = 0;
+	int i = 0,j = 0,k=0;
 		
 		
-		/*Merge array in sorted order
-		 * and store in newArr
-		 * */
-		while(i<len1 && j<len2) {
-			
-			if(nums1[i] < nums2[j]) {
-				newArr[k++] = nums1[i++];
-			}else {
-				newArr[k++] = nums2[j++];
-			}
-		}
-		while(i<len1) {
+	/*Merge array in sorted order
+	 * and store in newArr
+	 * */
+	while(i<len1 && j<len2) {
+
+		if(nums1[i] < nums2[j]) {
 			newArr[k++] = nums1[i++];
-		}
-		while(j<len2) {
+		}else {
 			newArr[k++] = nums2[j++];
 		}
+	}
+	while(i<len1) {
+		newArr[k++] = nums1[i++];
+	}
+	while(j<len2) {
+		newArr[k++] = nums2[j++];
+	}
 
-		k--;
-		
-		//Find the median 
-		if(k%2 == 1) {
-			res = (newArr[k/2] + newArr[(k/2)+1])/2.0;
-		}else {
-			res = newArr[(k/2)];
-		}
-		
-		return res;
+	k--;
+
+	//Find the median 
+	if(k%2 == 1) {
+		res = (newArr[k/2] + newArr[(k/2)+1])/2.0;
+	}else {
+		res = newArr[(k/2)];
+	}
+
+	return res;
     }
 }
