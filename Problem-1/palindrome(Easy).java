@@ -18,18 +18,18 @@ Explanation: From left to right, it reads -121. From right to left, it becomes 1
 
 class Solution {
     public boolean isPalindrome(int x) {
-		int temp = x;
-		int revNum = 0;
-		boolean flag = false;
-        
-		while(temp > 0) {
-			revNum = revNum*10 +temp%10 ;
-			temp /= 10;
-		}
-        
-		if(x == revNum) flag = true;
-		
-		return flag;
+	int temp = x;
+	int revNum = 0;
+	boolean flag = false;
+
+	while(temp > 0) {
+		revNum = revNum*10 +temp%10 ;
+		temp /= 10;
+	}
+
+	if(x == revNum) flag = true;
+
+	return flag;
     }
 }
 
