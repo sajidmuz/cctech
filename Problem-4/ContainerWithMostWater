@@ -37,22 +37,22 @@ n == height.length
 
 class Solution {
     public int maxArea(int[] height) {
-       int max = 0;
-		   int lb = 0;   //Lower Bound
-		   int ub = height.length-1;    //Upper bound
+      	int max = 0;
+	int lb = 0;   //Lower Bound
+	int ub = height.length-1;    //Upper bound
 		
-		while(lb < ub) {
-    
-    /*
+	while(lb < ub) {
+
+	/*
 	 * We get the minimum height of lower bound and upper bound lines 
 	 * for width , get difference b/w lb and ub
 	 * after calculating area , compare with last calculated area to get max araa
 	 * 
 	 * */
-			max = Math.max(max, Math.min(height[lb], height[ub])*(ub-lb));
-			if(height[lb] < height[ub]) lb++;
-			else --ub;
-		}
+		max = Math.max(max, Math.min(height[lb], height[ub])*(ub-lb));
+		if(height[lb] < height[ub]) lb++;
+		else --ub;
+	}
 		
 		return max;
     
