@@ -54,16 +54,16 @@ nums is sorted in non-decreasing order
 class Solution {
     public int removeDuplicates(int[] nums) {
         int count = 0;
-		int len = nums.length;
-		int index = 0;
-		
-		for(int i =0; i< len; i++) {
-			if(nums[index] != nums[i]) {
-				index++;
-				nums[index] = nums[i];
-			}
+	int len = nums.length;
+	int index = 0;
+
+	for(int i =0; i< len; i++) {
+		if(nums[index] != nums[i]) {
+			index++;
+			nums[index] = nums[i];
 		}
-		return index+1;
+	}
+	return index+1;
         
     }
 }
